@@ -22,3 +22,10 @@ Show a progress bar for daily protein intake.
 
 5. Share data with friends by friend requesting someone 
     - you can "boost" eachother by sending stickers like "you go girl!" or "keep going"
+
+
+What we have done / Agenda:
+use Figma to collaborate on a web design
+
+NutriByte
+BoostFuel
