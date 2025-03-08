@@ -33,7 +33,9 @@ function Navbar() {
           <Link to="/Connect">
               <button>Connect</button>
             </Link>
+            <Link to="/Boost">
             <button>Boost</button>
+            </Link>
           </div>
         </div>
         {/* Sign Up Button (Now Uses Link) */}

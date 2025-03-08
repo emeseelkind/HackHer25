@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignUp from "./components/SignUp"; // Capitalize first letter
 import Goals from "./components/Goals";
 import Intake from "./components/Intake";
+import Boost from "./components/Boost"; 
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/connect" element={<Connect />} /> 
         <Route path="/goals" element={<Goals />} />
         <Route path="/intake" element={<Intake />} />
+        <Route path="/boost" element={<Boost />} />
       </Routes>
     </Router>
   );
