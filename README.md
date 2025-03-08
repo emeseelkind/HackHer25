@@ -1,3 +1,3 @@
 # HackHer25
 
-Emese Elkind and Shrinidhi Kishnan
+Emese Elkind and Shrinidhi Krishnan
