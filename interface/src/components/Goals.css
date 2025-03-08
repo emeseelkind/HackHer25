@@ -1,17 +1,17 @@
 .goals-box {
     display: flex;
-    flex-direction: row;  /* ✅ Side-by-side layout */
+    flex-direction: row;  
     align-items: center;
-    justify-content: center;  /* ✅ Centers content horizontally */
-    width: 90%; /* ✅ Increase width */
-    max-width: 1100px; /* ✅ Allow it to take up more space */
+    justify-content: center;  
+    width: 90%; 
+    max-width: 1100px; 
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px; /* ✅ Increase padding for better spacing */
+    padding: 40px; 
     border-radius: 15px;
     text-align: center;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
-    margin: 50px auto; /* ✅ Add margin on top & bottom for better centering */
-    gap: 50px; /* ✅ Increase spacing between table & image */
+    margin: 50px auto; 
+    gap: 50px; 
   }
   
   /* Centering the container */
@@ -19,20 +19,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85vh; /* ✅ Center vertically */
+    height: 85vh; 
   }
   
   /* Resize table for better visibility */
   .goals-table {
     width: 100%;
-    max-width: 500px; /* ✅ Increase table width */
+    max-width: 500px; 
     border-collapse: collapse;
     text-align: left;
   }
   
   /* Increase font size */
   .goals-table th, .goals-table td {
-    font-size: 18px; /* ✅ Bigger text */
+    font-size: 18px; 
     padding: 12px;
   }
   
@@ -40,7 +40,7 @@
   .goals-table input {
     width: 100%;
     padding: 10px;
-    font-size: 16px; /* ✅ Bigger input fields */
+    font-size: 16px; 
   }
   
   /* Adjust image size */
@@ -52,7 +52,7 @@
   }
   
   .goals-logo {
-    width: 300px; /* ✅ Increase image size */
+    width: 300px; 
     max-width: 100%;
     height: auto;
   }

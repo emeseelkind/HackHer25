@@ -1,17 +1,17 @@
 .intake-box {
     display: flex;
-    flex-direction: row;  /* ✅ Align table & chart side by side */
+    flex-direction: row;  
     align-items: center;
-    justify-content: center; /* ✅ Centers horizontally */
+    justify-content: center; 
     width: 90%;
-    max-width: 1100px; /* ✅ Make it wider */
+    max-width: 1100px; 
     background-color: rgba(255, 255, 255, 0.9);
     padding: 40px;
     border-radius: 15px;
     text-align: center;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
-    margin: 50px auto; /* ✅ Add margin on top & bottom */
-    gap: 50px; /* ✅ Increase spacing between table & chart */
+    margin: 50px auto; 
+    gap: 50px; 
   }
   
   /* Centering the container */
@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85vh; /* ✅ Center vertically */
+    height: 85vh; 
   }
   
   /* Add table lines without changing anything else */
@@ -32,11 +32,10 @@
   font-size: 18px;
 }
 
-/* ✅ Add horizontal and vertical lines */
 .intake-table td, .intake-table th {
   padding: 12px;
   font-weight: bold;
-  border: 2px solid black; /* ✅ Just adding the separating lines */
+  border: 2px solid black; 
 }
 
   
@@ -76,7 +75,7 @@
   }
   
   .progress-circle {
-    width: 120px; /* ✅ Increase size */
+    width: 120px; 
     height: 120px;
     border-radius: 50%;
     border: 12px solid #f9bebe;
