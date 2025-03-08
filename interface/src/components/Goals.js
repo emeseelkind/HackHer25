@@ -1,4 +1,5 @@
-import "./Goals.css"; // Import CSS file
+import "./Goals.css"; // Import CSS
+import goalsLogo from "./goalslogo.png"; // ✅ Import PNG file
 
 function Goals() {
   return (
@@ -32,10 +33,9 @@ function Goals() {
           </tbody>
         </table>
 
+        {/* Displaying the PNG Image */}
         <div className="goals-chart">
-          <div className="circle-chart">
-            <p>Goals</p>
-          </div>
+          <img src={goalsLogo} alt="Goals Visualization" className="goals-logo" />
         </div>
       </div>
     </div>

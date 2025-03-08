@@ -1,57 +1,50 @@
-.goals-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f8d7da;
-  }
-  
-  .goals-box {
+.goals-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
+    justify-content: center; /* Ensure vertical centering */
+    width: 80%;
+    max-width: 900px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 12px;
     text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Center the box itself */
   }
   
-  .goals-title {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
+  /* Fix table alignment */
   .goals-table {
-    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto; /* Center horizontally */
     border-collapse: collapse;
+    text-align: left; /* Align text properly */
   }
   
-  .goals-table th, .goals-table td {
-    padding: 10px;
+  /* Ensure the table input fields are aligned */
+  .goals-table input {
+    width: 100%;
+    padding: 5px;
     border: 1px solid #ddd;
+    border-radius: 5px;
   }
   
-  .goal-label {
-    font-weight: bold;
-    text-align: left;
-  }
-  
-  .protein { background-color: pink; }
-  .carb { background-color: #f08; }
-  .vitamin { background-color: #69f; }
-  .minerals { background-color: blue; color: white; }
-  
+  /* Center the Goals chart */
   .goals-chart {
-    margin-top: 20px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
   
-  .circle-chart {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 10px solid pink;
-    text-align: center;
-    line-height: 150px;
-    font-weight: bold;
+  /* Ensure the image is centered */
+  .goals-logo {
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center image */
   }
   
