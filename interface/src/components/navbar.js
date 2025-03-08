@@ -19,8 +19,6 @@ function Navbar() {
           </div>
         </div>
 
-        {/* Sign Up Button */}
-        <button className="signup-btn">Sign Up</button>
         
         {/* Community Dropdown */}
         <div className="dropdown">
@@ -30,6 +28,8 @@ function Navbar() {
             <div>Boost</div>
           </div>
         </div>
+        {/* Sign Up Button */}
+        <button className="signup-btn">Sign Up</button>
       </div>
     </nav>
   );
