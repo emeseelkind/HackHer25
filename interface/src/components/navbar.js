@@ -15,8 +15,8 @@ function Navbar() {
         <div className="dropdown">
           <button>Personal</button>
           <div className="dropdown-menu">
-            <div>Intake</div>
-            <div>Goals</div>
+            <button>Intake</button>
+            <button>Goals</button>
           </div>
         </div>
 
@@ -25,8 +25,8 @@ function Navbar() {
         <div className="dropdown">
           <button>Community</button>
           <div className="dropdown-menu">
-            <div>Connect</div>
-            <div>Boost</div>
+            <button>Connect</button>
+            <button>Boost</button>
           </div>
         </div>
         {/* Sign Up Button (Now Uses Link) */}
