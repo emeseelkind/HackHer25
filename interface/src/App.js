@@ -3,12 +3,11 @@ import Navbar from "./components/navbar"; // Capitalize first letter
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-  
-      </header>
+    <div>
+      <Navbar />
     </div>
   );
 }
+
 
 export default App;
