@@ -19,28 +19,7 @@ const Connect = () => {
   
   return (
     <div className="connect-container">
-      <div className="header">
-        <div className="logo-section">
-          <div className="logo">
-            <span>NB</span>
-          </div>
-          <h1>NutriByte</h1>
-        </div>
-        <div className="nav-links">
-          <div className="nav-item">Personal</div>
-          <div className="nav-item">Community</div>
-        </div>
-      </div>
-      
-      <div className="content">
-        <div className="sidebar">
-          <div className="sidebar-item">
-            Intake Goals
-          </div>
-          <div className="sidebar-item selected">
-            Connect Boost
-          </div>
-        </div>
+          
         
         <div className="friends-section">
           <div className="search-container">
@@ -68,7 +47,6 @@ const Connect = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
