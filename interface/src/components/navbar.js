@@ -19,6 +19,9 @@ function Navbar() {
           </div>
         </div>
 
+        {/* Sign Up Button */}
+        <button className="signup-btn">Sign Up</button>
+        
         {/* Community Dropdown */}
         <div className="dropdown">
           <button>Community</button>
