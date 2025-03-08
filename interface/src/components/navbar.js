@@ -16,7 +16,7 @@ function Navbar() {
           <button>Personal</button>
           <div className="dropdown-menu">
             <button>Intake</button>
-            <button>Goals</button>
+            <Link to="/goals" className="dropdown-item">Goals</Link>
           </div>
         </div>
 

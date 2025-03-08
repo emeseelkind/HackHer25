@@ -1,0 +1,57 @@
+.goals-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8d7da;
+  }
+  
+  .goals-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .goals-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .goals-table {
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  .goals-table th, .goals-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .goal-label {
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .protein { background-color: pink; }
+  .carb { background-color: #f08; }
+  .vitamin { background-color: #69f; }
+  .minerals { background-color: blue; color: white; }
+  
+  .goals-chart {
+    margin-top: 20px;
+  }
+  
+  .circle-chart {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 10px solid pink;
+    text-align: center;
+    line-height: 150px;
+    font-weight: bold;
+  }
+  
