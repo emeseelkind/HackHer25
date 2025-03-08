@@ -13,7 +13,7 @@ Bonus: Implement real-time monitoring if connected to a live ECG feed.
 
 
 📌 Project Name: AI-Powered Protein Tracker
-🔹 Goal: A deep learning-powered tool that helps users track their daily protein intake based on food inputs.
+Goal: A deep learning-powered tool that helps users track their daily protein intake based on food inputs.
 
 1. UI for User Input (Web or Desktop App)
 Users enter the food they’ve eaten (e.g., “2 eggs, 100g chicken, 1 cup lentils”).
@@ -31,3 +31,6 @@ Gives warnings if protein intake is too low or too high.
 Provides dietary suggestions (e.g., “Try adding Greek yogurt for more protein!”).
 4. Data Visualization & Tracking
 Show a progress bar for daily protein intake.
+
+5. Share data with friends by friend requesting someone 
+    - you can "boost" eachother by sending stickers like "you go girl!" or "keep going"
