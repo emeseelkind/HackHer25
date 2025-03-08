@@ -1,17 +1,5 @@
 ideas
 
-1. AI-Powered Skin Cancer Detector
-Description: Train a CNN model (using a dataset like ISIC) to classify images of skin lesions as benign or malignant.
-UI Features: Users can upload an image of a skin lesion, and the model provides a diagnosis with a confidence score.
-Bonus: Provide heatmaps for explainability using Grad-CAM.
-
-
-2. AI-Powered ECG Anomaly Detector
-Description: Train a LSTM model to detect arrhythmias in ECG data.
-UI Features: Users can upload ECG signal data, and the model detects irregularities.
-Bonus: Implement real-time monitoring if connected to a live ECG feed.
-
-
 📌 Project Name: AI-Powered Protein Tracker
 Goal: A deep learning-powered tool that helps users track their daily protein intake based on food inputs.
 
