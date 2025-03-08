@@ -1,57 +1,86 @@
 .navbar {
-    background-color: #a855f7; /* Purple */
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-logo .circle {
-    width: 50px;
-    height: 50px;
-    background: white;
-    color: black;
-    border: 3px solid pink;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-  }
-  
-  .navbar-title {
-    font-weight: bold;
-    font-style: italic;
-    font-size: 24px;
-    margin-left: 10px;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .dropdown {
-    position: relative;
-  }
-  
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    background: white;
-    color: black;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-  
+  background-color: #a855f7; /* Purple */
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo .circle {
+  width: 50px;
+  height: 50px;
+  background: white;
+  color: black;
+  border: 3px solid pink;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.navbar-title {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+/* Updated styles for navbar buttons */
+.nav-links a {
+  background-color: #8a2be2; /* Deep purple button color */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #6a1b9a; /* Darker purple on hover */
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #a855f7;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+/* Updated styles for navbar buttons */
+.nav-links button {
+  background-color: #8a2be2; /* Deep purple button color */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.nav-links button:hover {
+  background-color: #6a1b9a; /* Darker purple on hover */
+}
