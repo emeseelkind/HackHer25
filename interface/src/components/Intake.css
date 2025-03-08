@@ -75,25 +75,29 @@
   }
   
   .progress-circle {
-    width: 120px; 
+    width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 12px solid #f9bebe;
-    text-align: center;
-    line-height: 100px;
-    font-weight: bold;
     position: relative;
+    background: conic-gradient(
+      #e08c8c 0% 75%, 
+      #ffffff 75% 100% 
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
   }
   
+  /* Create a white inner circle to make it look like a ring */
   .progress-circle::before {
     content: "";
     position: absolute;
-    width: 90px;
+    width: 90px;  
     height: 90px;
     border-radius: 50%;
     background-color: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
   

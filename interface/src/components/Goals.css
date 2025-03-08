@@ -56,4 +56,17 @@
     max-width: 100%;
     height: auto;
   }
+  /* Styling for goal labels matching the rings */
+.goal-label {
+    font-weight: bold;
+    text-align: left;
+    font-size: 18px;
+  }
+  
+  /* Colors matching the ring layers */
+  .goal-label.protein { color: #fdb2ea; }   /* Light Pink (Innermost) */
+  .goal-label.carb { color: #f99beb; }      /* Darker Pink */
+  .goal-label.vitamin { color: #85a9ff; }   /* Light Blue */
+  .goal-label.minerals { color: #3f82f7; }  /* Dark Blue (Outermost) */
+  
   
