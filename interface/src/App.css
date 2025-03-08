@@ -1,5 +1,27 @@
 body {
-  background-color: rgb(255, 199, 209);
+  background-color: rgb(255, 216, 223);
   margin: 0;
   font-family: Arial, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes wind {
+  0% { transform: translateX(-100%); opacity: 0.2; }
+  50% { opacity: 0.5; }
+  100% { transform: translateX(100%); opacity: 0.2; }
+}
+
+.wind {
+  position: absolute;
+  top: 50%;
+  width: 200px;
+  height: 20px;
+  background: linear-gradient(
+    to right,
+     rgba(128, 0, 128, 0.223),
+     rgba(128, 0, 128, 0.618),
+     rgba(128, 0, 128, 0.322)
+     );
+  animation: wind 3s linear infinite;
 }
