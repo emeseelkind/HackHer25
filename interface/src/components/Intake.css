@@ -1,0 +1,100 @@
+.intake-box {
+    display: flex;
+    flex-direction: row;  /* ✅ Align table & chart side by side */
+    align-items: center;
+    justify-content: center; /* ✅ Centers horizontally */
+    width: 90%;
+    max-width: 1100px; /* ✅ Make it wider */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    margin: 50px auto; /* ✅ Add margin on top & bottom */
+    gap: 50px; /* ✅ Increase spacing between table & chart */
+  }
+  
+  /* Centering the container */
+  .intake-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh; /* ✅ Center vertically */
+  }
+  
+  /* Add table lines without changing anything else */
+.intake-table {
+  width: 100%;
+  max-width: 500px;
+  border-collapse: collapse;
+  background-color: #f9bebe;
+  text-align: left;
+  font-size: 18px;
+}
+
+/* ✅ Add horizontal and vertical lines */
+.intake-table td, .intake-table th {
+  padding: 12px;
+  font-weight: bold;
+  border: 2px solid black; /* ✅ Just adding the separating lines */
+}
+
+  
+  /* Ensure table rows are spaced well */
+  .intake-table td {
+    padding: 12px;
+    font-weight: bold;
+  }
+  
+  /* Style the total box */
+  .intake-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9bebe;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .total-box {
+    background-color: #c37cf5;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Adjust circular progress bar */
+  .intake-chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+  
+  .progress-circle {
+    width: 120px; /* ✅ Increase size */
+    height: 120px;
+    border-radius: 50%;
+    border: 12px solid #f9bebe;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .progress-circle::before {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  

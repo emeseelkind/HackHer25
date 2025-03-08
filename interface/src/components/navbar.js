@@ -15,8 +15,13 @@ function Navbar() {
         <div className="dropdown">
           <button>Personal</button>
           <div className="dropdown-menu">
-            <button>Intake</button>
-            <Link to="/goals" className="dropdown-item">Goals</Link>
+        
+            <Link to="/goals">
+                <button>Goals</button>
+            </Link>
+            <Link to="/intake">
+                <button>Intake</button>
+            </Link>
           </div>
         </div>
 

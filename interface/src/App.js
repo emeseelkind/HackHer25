@@ -5,6 +5,7 @@ import Connect from "./components/Connect"; // Import the Connect component
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignUp from "./components/SignUp"; // Capitalize first letter
 import Goals from "./components/Goals";
+import Intake from "./components/Intake";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/connect" element={<Connect />} /> 
         <Route path="/goals" element={<Goals />} />
+        <Route path="/intake" element={<Intake />} />
       </Routes>
     </Router>
   );
