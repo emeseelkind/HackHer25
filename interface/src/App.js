@@ -1,11 +1,16 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar"; // Capitalize first letter
 import "./App.css"; // Import the CSS file
+import SignUp from "./components/SignUp"; // Capitalize first letter
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Navbar />
-    </div>
+      <Routes>
+        <Route path = "/signup" element = {<SignUp />} />
+      </Routes>
+    </Router>
   );
 
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./navbar.css"; // Import the CSS file
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -28,8 +29,8 @@ function Navbar() {
             <div>Boost</div>
           </div>
         </div>
-        {/* Sign Up Button */}
-        <button className="signup-btn">Sign Up</button>
+        {/* Sign Up Button (Now Uses Link) */}
+        <Link to="/signup" className="signup-btn">Sign Up</Link>
       </div>
     </nav>
   );
