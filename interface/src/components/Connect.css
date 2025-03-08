@@ -1,0 +1,144 @@
+.connect-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header styles */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9c4dcc;
+    color: white;
+    padding: 10px 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .logo-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    border: 2px solid #ccc;
+  }
+  
+  .logo span {
+    color: black;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  .nav-item {
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  
+  /* Content styles */
+  .content {
+    display: flex;
+    background-color: #ffd6d6;
+    min-height: 500px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 20px;
+    width: 30%;
+  }
+  
+  .sidebar-item {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: #9c4dcc;
+    color: white;
+    border-radius: 4px;
+  }
+  
+  .sidebar-item.selected {
+    font-weight: bold;
+  }
+  
+  /* Friends section styles */
+  .friends-section {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .search-container {
+    background-color: #ffb6b6;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .search-container h2 {
+    margin-top: 0;
+    color: #333;
+    font-weight: normal;
+    margin-bottom: 10px;
+  }
+  
+  .search-container input {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  .friends-list {
+    background-color: white;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  .friend-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    background-color: #ffb6b6;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+  
+  .friend-item:last-child {
+    border-bottom: none;
+  }
+  
+  .friend-name {
+    font-weight: normal;
+  }
+  
+  .connect-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .connect-button:hover {
+    background-color: #45a049;
+  }
