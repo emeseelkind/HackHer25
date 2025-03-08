@@ -25,7 +25,9 @@ function Navbar() {
         <div className="dropdown">
           <button>Community</button>
           <div className="dropdown-menu">
-            <button>Connect</button>
+          <Link to="/Connect">
+              <button>Connect</button>
+            </Link>
             <button>Boost</button>
           </div>
         </div>
