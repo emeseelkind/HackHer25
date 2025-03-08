@@ -7,15 +7,15 @@
   }
   
   .signup-box {
-    background-color: rgba(255, 192, 203, 0.6); /* Soft transparent pink */
+    background-color: rgba(255, 134, 154, 0.926); /* Soft transparent pink */
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     text-align: center;
   }
   
   .signup-text {
     font-size: 18px;
-    color: #a94442;
+    color: #4e0100;
     font-weight: bold;
   }
   

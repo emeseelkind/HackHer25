@@ -18,11 +18,11 @@ function Goals() {
             <tbody>
               <tr>
                 <td className="goal-label protein">Protein</td>
-                <td><input type="text" placeholder="Protein Goals" /></td>
+                <td><input type="text" placeholder="Protein Goals (g)" /></td>
               </tr>
               <tr>
                 <td className="goal-label carb">Carb</td>
-                <td><input type="text" placeholder="Carb Goals" /></td>
+                <td><input type="text" placeholder="Carb Goals (g)" /></td>
               </tr>
               <tr>
                 <td className="goal-label vitamin">Vitamin</td>

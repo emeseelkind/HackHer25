@@ -65,7 +65,7 @@
   
   /* Colors matching the ring layers */
   .goal-label.protein { color: #fdb2ea; }   /* Light Pink (Innermost) */
-  .goal-label.carb { color: #f99beb; }      /* Darker Pink */
+  .goal-label.carb { color: #f557dd; }      /* Darker Pink */
   .goal-label.vitamin { color: #85a9ff; }   /* Light Blue */
   .goal-label.minerals { color: #3f82f7; }  /* Dark Blue (Outermost) */
   
