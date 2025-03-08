@@ -6,17 +6,29 @@ const app = express();
 app.use(express.json());
 app.use(cors()); // Allow frontend requests
 
-app.post("/signup", (req, res) => {
-  const { username } = req.body;
-  if (!username) return res.status(400).send("Username is required");
+const usersFile = "users.txt";
 
-  fs.appendFile("users.txt", username + "\n", (err) => {
+// Endpoint to get users from users.txt
+app.get("/users", (req, res) => {
+  fs.readFile(usersFile, "utf8", (err, data) => {
     if (err) {
-      console.error("Error saving username:", err);
-      return res.status(500).send("Failed to save username");
+      console.error("Error reading file:", err);
+      return res.status(500).json({ error: "Failed to read users" });
     }
-    res.status(200).send("Username saved successfully");
+
+    console.log("Raw file data:", data); // Debugging log
+
+    const users = data
+      .split("\n")
+      .map((name) => name.trim())
+      .filter((name) => name !== "") // Remove empty lines
+      .map((name, index) => ({ id: index + 1, name }));
+
+    console.log("Parsed users:", users); // Debugging log
+
+    res.json(users);
   });
 });
 
+// Start the server
 app.listen(5000, () => console.log("Server running on port 5000"));
