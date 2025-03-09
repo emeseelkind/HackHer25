@@ -39,6 +39,12 @@ def test_model(model, X_test, scaler):
     Y_pred = scaler.inverse_transform(Y_pred_scaled)
     return Y_pred
 
+def load_food_intake(file_name="food_intake.txt"):
+    # Load food items from a text file
+    with open(file_name, "r") as file:
+        food_items = [line.strip() for line in file.readlines()]
+    return food_items
+
 def main():
     file_path = "ABBREV.csv"
     df = load_data(file_path)
@@ -53,14 +59,21 @@ def main():
     
     print("\nModel training complete and saved!\n")
     
-    food_example = "BUTTER,WITH SALT"
-    food_id = label_encoder.transform([food_example])[0]
-    nutrition_scaled = model.predict([[food_id]])
-    nutrition = scaler.inverse_transform(nutrition_scaled.reshape(1, -1))  # Ensure correct shape
-    nutrition_facts = dict(zip(nutrient_columns, nutrition[0]))
-    print("\n ----------------------- \n")
-    for nutrient, value in nutrition_facts.items():
-        print(f"{nutrient}: {value:.2f} g")
+    food_intake = load_food_intake("food_intake.txt")
+    # Iterate through each food item and make predictions
+    for food_example in food_intake:
+        try:
+            food_id = label_encoder.transform([food_example])[0]
+            nutrition_scaled = model.predict([[food_id]])
+            nutrition = scaler.inverse_transform(nutrition_scaled.reshape(1, -1))  # Ensure correct shape
+            nutrition_facts = dict(zip(nutrient_columns, nutrition[0]))
+            
+            print(f"\nNutrition facts for {food_example}:\n")
+            for nutrient, value in nutrition_facts.items():
+                print(f"{nutrient}: {value:.2f} g")
+        except ValueError:
+            print(f"\nFood item '{food_example}' not found in the database.")
+        
     print("\nDONE! \n")
 
 if __name__ == "__main__":

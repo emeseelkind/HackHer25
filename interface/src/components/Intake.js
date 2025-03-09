@@ -1,6 +1,60 @@
-import "./Intake.css"; // Import CSS
+import "./Intake.css";
+import { useState, useEffect } from "react";
 
-function Intake() {
+function FoodIntake() {
+  const [foodItem, setFoodItem] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [foodItems, setFoodItems] = useState([]);
+
+  // Fetch food items from the server on component mount
+  useEffect(() => {
+    const fetchFoodItems = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/food-intake");
+        const data = await response.json();
+        setFoodItems(data);
+      } catch (error) {
+        console.error("Error fetching food intake data:", error);
+      }
+    };
+    fetchFoodItems();
+  }, []);
+
+  // Function to handle keypress for saving food intake
+  const handleKeyPress = async (event) => {
+    if (event.key === "Enter" && foodItem.trim() !== "" && quantity.trim() !== "") {
+      try {
+        // Save food intake data to the server (or locally if needed)
+        const foodData = {
+          foodItem,
+          quantity
+        };
+
+        // Send the food intake data to the backend (optional if you plan to save to file)
+        await fetch("http://localhost:5000/food_intake", {
+          method: "POST", // If POST endpoint is added in server
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(foodData),
+        });
+
+        // Update food items list
+        const updatedFoodItems = [...foodItems, { foodItem, quantity }];
+        setFoodItems(updatedFoodItems);
+
+        // Save the food items locally (in localStorage)
+        localStorage.setItem("foodIntake", JSON.stringify(updatedFoodItems));
+
+        alert("Food intake saved!");
+
+        // Clear input fields
+        setFoodItem("");
+        setQuantity("");
+      } catch (error) {
+        console.error("Error saving food intake:", error);
+      }
+    }
+  };
+
   return (
     <div className="intake-container">
       <div className="intake-box">
@@ -10,38 +64,42 @@ function Intake() {
           <h2 className="intake-title">Today's Food Intake:</h2>
           <table className="intake-table">
             <tbody>
-              <tr>
-                <td>Chicken</td>
-                <td>25</td>
-              </tr>
-              <tr>
-                <td>Rice</td>
-                <td>5</td>
-              </tr>
-              <tr>
-                <td>Carrots</td>
-                <td>5</td>
-              </tr>
+              {foodItems.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.foodItem}</td>
+                  <td>{item.quantity}g</td>
+                </tr>
+              ))}
             </tbody>
           </table>
 
           {/* Total Section */}
           <div className="intake-total">
             <span>Total:</span>
-            <span className="total-box">35</span>
+            <span className="total-box">{foodItems.length}</span>
           </div>
         </div>
 
-        {/* Circular Progress Chart */}
-        <div className="intake-chart">
-          <div className="progress-circle">
-            <p>Total</p>
-          </div>
+        {/* Input Section */}
+        <div className="input-section">
+          <input
+            type="text"
+            placeholder="Enter food item"
+            value={foodItem}
+            onChange={(e) => setFoodItem(e.target.value)}
+            onKeyDown={handleKeyPress}
+          />
+          <input
+            type="number"
+            placeholder="Enter quantity (g)"
+            value={quantity}
+            onChange={(e) => setQuantity(e.target.value)}
+            onKeyDown={handleKeyPress}
+          />
         </div>
-
       </div>
     </div>
   );
 }
 
-export default Intake;
+export default FoodIntake;
