@@ -10,13 +10,13 @@ const PORT = 5000;
 app.use(bodyParser.json());
 
 // Define file paths
-const usersFile = path.join(__dirname, "users.txt");
-const componentsDir = path.join(__dirname, "components");
-const foodIntakeFile = path.join(componentsDir, "food_intake.txt");
+const usersFile = path.join(__dirname, "src", "users.txt");
+const srcDir = path.join(__dirname, "src");
+const foodIntakeFile = path.join(__dirname, "src", "food_intake.txt");
 
 // Ensure the components directory exists
-if (!fs.existsSync(componentsDir)) {
-  fs.mkdirSync(componentsDir);
+if (!fs.existsSync(srcDir)) {
+  fs.mkdirSync(srcDir);
 }
 
 // Route to save user data
