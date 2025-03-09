@@ -30,14 +30,14 @@ function FoodIntake() {
           quantity
         };
 
-        // Send the food intake data to the backend (optional if you plan to save to file)
+        // Send the food intake data to the backend to save in the file
         await fetch("http://localhost:5000/food_intake", {
-          method: "POST", // If POST endpoint is added in server
+          method: "POST", // POST method to save data
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(foodData),
         });
 
-        // Update food items list
+        // Update food items list with the newly added item
         const updatedFoodItems = [...foodItems, { foodItem, quantity }];
         setFoodItems(updatedFoodItems);
 
@@ -46,7 +46,7 @@ function FoodIntake() {
 
         alert("Food intake saved!");
 
-        // Clear input fields
+        // Clear input fields after saving
         setFoodItem("");
         setQuantity("");
       } catch (error) {

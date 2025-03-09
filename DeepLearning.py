@@ -4,6 +4,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.neural_network import MLPRegressor
 import joblib
+import json
+
 
 def load_data(file_path):
     df = pd.read_csv(file_path)
@@ -39,11 +41,12 @@ def test_model(model, X_test, scaler):
     Y_pred = scaler.inverse_transform(Y_pred_scaled)
     return Y_pred
 
+
 def load_food_intake(file_name="food_intake.txt"):
-    # Load food items from a text file
+    # Load food items and quantities from a JSON-style file
     with open(file_name, "r") as file:
-        food_items = [line.strip() for line in file.readlines()]
-    return food_items
+        food_data = json.load(file)  # Parse the JSON content
+    return [(food_data["foodItem"], food_data["quantity"])]  # Return a list of tuples
 
 def main():
     file_path = "ABBREV.csv"
@@ -60,21 +63,25 @@ def main():
     print("\nModel training complete and saved!\n")
     
     food_intake = load_food_intake("food_intake.txt")
-    # Iterate through each food item and make predictions
-    for food_example in food_intake:
+    # Iterate through each food item and quantity and make predictions
+    for food_example, quantity in food_intake:
         try:
+            # Ensure that food_example is encoded correctly
             food_id = label_encoder.transform([food_example])[0]
             nutrition_scaled = model.predict([[food_id]])
             nutrition = scaler.inverse_transform(nutrition_scaled.reshape(1, -1))  # Ensure correct shape
             nutrition_facts = dict(zip(nutrient_columns, nutrition[0]))
             
-            print(f"\nNutrition facts for {food_example}:\n")
+            print(f"\nNutrition facts for {food_example} (Quantity: {quantity}g):\n")
             for nutrient, value in nutrition_facts.items():
-                print(f"{nutrient}: {value:.2f} g")
+                # Scale by quantity if needed, assuming nutrient values are per 100g
+                scaled_value = value * (quantity / 100)
+                print(f"{nutrient}: {scaled_value:.2f} g")
         except ValueError:
             print(f"\nFood item '{food_example}' not found in the database.")
         
     print("\nDONE! \n")
+
 
 if __name__ == "__main__":
     main()

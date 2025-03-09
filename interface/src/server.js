@@ -27,6 +27,7 @@ app.post("/save_user", (req, res) => {
     return res.status(400).json({ error: "Username is required." });
   }
 
+  // Save the username to the users file
   fs.appendFile(usersFile, username + "\n", (err) => {
     if (err) {
       console.error("Error saving user:", err);
@@ -48,6 +49,7 @@ app.post("/food_intake", (req, res) => {
 
   const foodEntry = `${foodItem}: ${quantity}g\n`;
 
+  // Save the food item and quantity to the food intake file
   fs.appendFile(foodIntakeFile, foodEntry, (err) => {
     if (err) {
       console.error("Error saving food intake:", err);
