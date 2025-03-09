@@ -4,9 +4,12 @@ Emese Elkind and Shrinidhi Krishnan
 
 **Description:** 
 
-**NutriByte** is an AI-Powered Nutrition Tracker that calculates your total nutrition intake per day based off of the food you input. 
-The food input is processed by the **Deep Learning** model which outputs the nutritional facts into the website!
-You can set personal daily **goals** that you can try to achieve by eating well and you can connect with friends and send them positive quotes and stickers!
+- **NutriByte** is an AI-Powered nutrition tracker that calculates your total nutrition intake per day based off of the food you input.
+- The food input is processed by the **Deep Learning** model which outputs the nutritional facts into the website!
+- You can set personal daily/ monthly **goals** that you can try to achieve by eating well.
+- You can connect with friends and send them positive quotes and stickers!
+- This is a personal tracker so you are never compared to your friends! They are only there to motivate you in your person goals!
+
 The Deep Learning model was trained with data from the kaggle website. Download csv from here:
 
 https://www.kaggle.com/datasets/utsavdey1410/food-nutrition-dataset 
