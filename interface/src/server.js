@@ -1,58 +1,44 @@
 const express = require("express");
 const fs = require("fs");
-const cors = require("cors");
+const path = require("path");
+const bodyParser = require("body-parser");
 
 const app = express();
-app.use(express.json());
-app.use(cors()); // Allow frontend requests
+const PORT = 5000;
 
-const usersFile = "users.txt";
-const foodIntakeFile = "food_intake.txt"; // New file
+// Middleware to parse JSON
+app.use(bodyParser.json());
 
-// Endpoint to get users from users.txt
-app.get("/users", (req, res) => {
-  fs.readFile(usersFile, "utf8", (err, data) => {
+// Define file paths
+const usersFile = path.join(__dirname, "users.txt");
+const componentsDir = path.join(__dirname, "components");
+const foodIntakeFile = path.join(componentsDir, "food_intake.txt");
+
+// Ensure the components directory exists
+if (!fs.existsSync(componentsDir)) {
+  fs.mkdirSync(componentsDir);
+}
+
+// Route to save user data
+app.post("/save_user", (req, res) => {
+  const { username } = req.body;
+
+  if (!username) {
+    return res.status(400).json({ error: "Username is required." });
+  }
+
+  fs.appendFile(usersFile, username + "\n", (err) => {
     if (err) {
-      console.error("Error reading file:", err);
-      return res.status(500).json({ error: "Failed to read users" });
+      console.error("Error saving user:", err);
+      return res.status(500).json({ error: "Failed to save user" });
     }
 
-    console.log("Raw file data:", data); // Debugging log
-
-    const users = data
-      .split("\n")
-      .map((name) => name.trim())
-      .filter((name) => name !== "") // Remove empty lines
-      .map((name, index) => ({ id: index + 1, name }));
-
-    console.log("Parsed users:", users); // Debugging log
-
-    res.json(users);
+    console.log("User saved:", username);
+    res.status(201).json({ message: "User saved successfully!" });
   });
 });
 
-// Endpoint to get food intake from food_intake.txt
-app.get("/food_intake", (req, res) => {
-  fs.readFile(foodIntakeFile, "utf8", (err, data) => {
-    if (err) {
-      console.error("Error reading file:", err);
-      return res.status(500).json({ error: "Failed to read food intake" });
-    }
-
-    console.log("Raw food intake data:", data); // Debugging log
-
-    const foodIntake = data
-      .split("\n")
-      .map((line) => line.trim())
-      .filter((line) => line !== ""); // Remove empty lines
-
-    console.log("Parsed food intake:", foodIntake); // Debugging log
-
-    res.json(foodIntake);
-  });
-});
-
-// Endpoint to save food intake data to food_intake.txt
+// Route to save food intake
 app.post("/food_intake", (req, res) => {
   const { foodItem, quantity } = req.body;
 
@@ -60,36 +46,20 @@ app.post("/food_intake", (req, res) => {
     return res.status(400).json({ error: "Food item and quantity are required." });
   }
 
-  // Create the entry string
-  const foodEntry = `${foodItem}: ${quantity}g`;
+  const foodEntry = `${foodItem}: ${quantity}g\n`;
 
-  // Check if the food intake file exists, create it if not
-  fs.exists(foodIntakeFile, (exists) => {
-    if (!exists) {
-      // If the file doesn't exist, create it with the new food entry
-      fs.writeFile(foodIntakeFile, foodEntry + "\n", (err) => {
-        if (err) {
-          console.error("Error creating file:", err);
-          return res.status(500).json({ error: "Failed to create food intake file" });
-        }
-
-        console.log("Food intake file created and saved:", foodEntry);
-        res.status(201).json({ message: "Food intake saved!" });
-      });
-    } else {
-      // If the file exists, append the new food entry
-      fs.appendFile(foodIntakeFile, foodEntry + "\n", (err) => {
-        if (err) {
-          console.error("Error saving food intake:", err);
-          return res.status(500).json({ error: "Failed to save food intake" });
-        }
-
-        console.log("Food intake saved:", foodEntry);
-        res.status(201).json({ message: "Food intake saved!" });
-      });
+  fs.appendFile(foodIntakeFile, foodEntry, (err) => {
+    if (err) {
+      console.error("Error saving food intake:", err);
+      return res.status(500).json({ error: "Failed to save food intake" });
     }
+
+    console.log("Food intake saved:", foodEntry);
+    res.status(201).json({ message: "Food intake saved successfully!" });
   });
 });
 
-// Start the server
-app.listen(5000, () => console.log("Server running on port 5000"));
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
